@@ -1,0 +1,90 @@
+
+
+Service Types:
+
+url:    ~/service_types/
+actions allowed:
+    -get
+    -post (requires: 
+            login or user:password
+            and parameters:
+                -'name': 'must be only alphanumeric or '_' and unique'
+                -'pretty_name': 'must be unique'
+                -'description': ''
+
+url:    ~/service_types/<service_type_name>/
+actions allowed:
+    -get
+    -put (requires: 
+            login or user:password
+            and parameters:
+                -'name': 'must be only alphanumeric or '_' and unique'
+                -'pretty_name': 'must be unique'
+                -'description'
+    -patch (requires: 
+            login or user:password
+            and parameters (all optional):
+                -'name': 'must be only alphanumeric or '_' and unique'
+                -'pretty_name': 'must be unique'
+                -'description': ''
+
+
+Locations:
+
+url:    ~/locations/
+actions allowed:
+    -get
+    -post (requires: 
+            login or user:password
+            and parameters:
+                -'name': 'must be only alphanumeric or '_' and unique'
+                -'description': ''
+            and for each existing service types:
+                -'<service_type_name>_rate': 'Must be a valid number >= zero'
+        -this will also create a service for each service type
+
+url:    ~/locations/<location_name>/
+actions allowed:
+    -get
+    -put (requires: 
+            login or user:password
+            and parameters:
+                -'name': 'must be only alphanumeric or '_' and unique'
+                -'description'
+    -patch (requires: 
+            login or user:password
+            and parameters (all optional):
+                -'name': 'must be only alphanumeric or '_' and unique'
+                -'description': ''
+
+
+Services (@ location):
+
+url:    ~/locations/<location_name>/services/
+actions allowed:
+    -get
+
+url:    ~/locations/<location_name>/services/<service_type_name>/
+actions allowed:
+    -get
+
+
+Rates (for a service @ location)
+
+url:    ~/locations/<location_name>/services/<service_type_name>/rates/
+actions allowed:
+    -get
+    -post (requires: 
+            login or user:password
+            and parameters:
+                -'rate': 'Must be a valid number >= zero'
+                -'date': 'Must be a valid date in the format: dd/mm/yyyy'
+
+url:    ~/locations/<location_name>/services/<service_type_name>/rates/current/
+actions allowed:
+    -get
+
+url:    ~/locations/<location_name>/services/<service_type_name>/rates/future/
+actions allowed:
+    -get
+

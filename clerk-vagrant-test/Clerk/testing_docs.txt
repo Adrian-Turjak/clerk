@@ -1,0 +1,17 @@
+
+For testing:
+    Requirements:
+        That Django and Django Rest Framework are installed
+
+    Change directory the folder this is in and the main options are:
+        python manage.py syncdb
+            - for now we're using sqlite3, this will create a new database, and load in the automation and admin users, as well as the AccountsUsers usergroup.
+                -admin username: admin   password(for testing): admin
+            - it will prompt to create a new superuser before loading in the premade one, so you can make a new one too.
+        python manage.py runserver
+            - runs the server
+            - admin is accessible at http://127.0.0.1:8000/admin/
+            - the browsable rest api is currently still active so going to those pages works. See the api_docs.txt file to see the options.
+        python manage.py test
+            - this just runs the test suite. Includes tests for the database models and their functions, as well as rest api requests and responses.
+            - the tests themselves are in clerk/tests.py and clerk/tests_api.py

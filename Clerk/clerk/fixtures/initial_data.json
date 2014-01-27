@@ -1,0 +1,50 @@
+
+[{
+     "pk": 1, 
+     "model": "auth.group", 
+     "fields": {
+          "name": "AccountsUser", 
+          "permissions": [
+               19, 
+               20, 
+               29, 
+               26
+          ]
+     }
+},
+{
+     "pk": 1, 
+     "model": "auth.user", 
+     "fields": {
+          "username": "automation", 
+          "first_name": "Robert", 
+          "last_name": "Botington", 
+          "is_active": true, 
+          "is_superuser": true, 
+          "is_staff": true, 
+          "last_login": "2013-11-28T15:35:10", 
+          "groups": [], 
+          "user_permissions": [], 
+          "password": "pbkdf2_sha256$12000$8oupddjIrGvp$S3O95wCnwFZuKUqzlmOFu1gMbQmJrlB5OzUSxKhd+74=", 
+          "email": "", 
+          "date_joined": "2013-11-28T15:33:03"
+     }
+},
+{
+     "pk": 2, 
+     "model": "auth.user", 
+     "fields": {
+          "username": "admin", 
+          "first_name": "", 
+          "last_name": "", 
+          "is_active": true, 
+          "is_superuser": true, 
+          "is_staff": true, 
+          "last_login": "2013-11-28T15:48:58", 
+          "groups": [], 
+          "user_permissions": [], 
+          "password": "pbkdf2_sha256$12000$ow7z3xzD107e$zDgDVEDBPknpS895pUFZSknPV37Ymc9ZjOsD9OkQXL0=", 
+          "email": "", 
+          "date_joined": "2013-11-28T15:48:58"
+     }
+}]
